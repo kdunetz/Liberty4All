@@ -1,6 +1,6 @@
 FROM websphere-liberty:webProfile7
 
-ADD target/LibertyStarter.war /config/dropins/
+ADD target/Liberty4All.war /config/dropins/
 
 EXPOSE 9080
 
