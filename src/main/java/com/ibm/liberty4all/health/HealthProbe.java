@@ -20,9 +20,7 @@ public class HealthProbe extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public HealthProbe() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+        super();    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
