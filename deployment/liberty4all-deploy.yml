@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: liberty4all
-        image: mycluster.icp:8500/jconallen/liberty4all
+        image: jconallen/liberty4all
         ports:
         - containerPort: 9080
         livenessProbe:
