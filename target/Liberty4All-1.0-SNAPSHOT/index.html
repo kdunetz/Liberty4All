@@ -1,0 +1,52 @@
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+	<link rel="icon" type="image/png" href="images/liberty.jpg">
+ 
+	<title>WebSphere Liberty App</title>
+</head>
+<body>
+
+<div class="container">
+	
+	<div class="jumbotron">
+		<div class="container">
+		  <div class="row">
+		    <div class="col-6">
+	  			<img src="images/liberty-was-202.png"/>
+		    </div>
+		    <div class="col-6">
+	  			<h1 class="display-4">Liberty 4 All</h1>
+		    </div>
+		  </div>
+		</div>
+	  <hr class="my-4">
+	  <p class="lead">A simple stateless JEE app served up with the WebSphere Liberty Profile.</p>
+		<p id="message"/>
+	</div>
+	
+	<div class="input-group mb-3">
+		<form class="form-inline" method="POST" action="health">
+		    <div class="input-group-prepend">
+		      <button type="submit" class="btn btn-primary mb-2">Toggle sick state</button>
+		    </div>
+		</form>
+	</div>
+	
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>

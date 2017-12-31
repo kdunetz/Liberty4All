@@ -1,0 +1,18 @@
+apiVersion: apps/v1beta1 
+kind: Deployment
+metadata:
+  name: liberty4all
+  namespace: jconallen
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: liberty4all
+    spec:
+      containers:
+      - name: liberty4all
+        image: mycluster.icp:8500/jconallen/liberty4all
+        ports:
+        - containerPort: 9080
+ 
