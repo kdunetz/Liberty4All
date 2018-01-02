@@ -46,7 +46,6 @@ podTemplate(label: 'docker', namespace: 'default',
                             passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
             
             sh "kubectl delete deployments -n ${namespace} --selector=app=${selector}"
-            sh "kubectl delete services -n ${namespace} --selector=app=${selector}"
         }
       } 
     }
@@ -57,7 +56,7 @@ podTemplate(label: 'docker', namespace: 'default',
                             usernameVariable: 'DOCKER_HUB_USER',
                             passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
             
-            sh "kubectl create -n ${namespace} -f ${deployment} -f ${service}"
+            sh "kubectl create -n ${namespace} -f ${deployment}"
         }
       } 
     }
