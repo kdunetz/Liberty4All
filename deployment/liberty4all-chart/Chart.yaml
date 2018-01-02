@@ -1,6 +1,6 @@
 pwdapiVersion: v1
 description: A Helm chart for the Liberty4All app.
 name: liberty4all-chart
-version: 0.1.0
+version: 0.2.0
 icon: liberty.png
 

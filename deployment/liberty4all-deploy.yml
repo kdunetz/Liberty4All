@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: liberty4all
-        image: demo/liberty4all
+        image: mycluster.icp:8500/demo/liberty4all
         ports:
         - containerPort: 9080
         livenessProbe:
