@@ -2,7 +2,6 @@ apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: liberty4all
-  namespace: jconallen
 spec:
   replicas: 2
   template:
@@ -12,7 +11,7 @@ spec:
     spec:
       containers:
       - name: liberty4all
-        image: jconallen/liberty4all
+        image: demo/liberty4all
         ports:
         - containerPort: 9080
         livenessProbe:

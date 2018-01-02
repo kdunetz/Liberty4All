@@ -7,19 +7,21 @@ podTemplate(label: 'docker', namespace: 'default',
   volumes: [hostPathVolume(hostPath: '/var/run/docker.sock', mountPath: '/var/run/docker.sock')]
   ) {
 
-  def gitSrc = 'https://github.com/jconallen/LibertyStarter.git'
+  def gitSrc = 'https://github.com/jconallen/Liberty4All.git'
   def dockerRegistry = 'https://mycluster.icp:8500'
-  def image = 'mycluster.icp:8500/jconallen/liberty-starter'
-  def deployment = 'deployment/liberty-starter-deploy.yml'
-  def service = 'deployment/liberty-starter-svc.yml'
-  def selector = 'liberty-starter'
-  def namespace = 'jconallen'
+  def image = 'mycluster.icp:8500/demo/liberty4all'
+  def deployment = 'deployment/liberty4all-deploy.yml'
+  def service = 'deployment/liberty4all-svc.yml'
+  def selector = 'liberty4all'
+  def namespace = 'demo'
   
   node('docker') {
     
-    stage('Build Maven project') {
+    stage('Get Source') {
       git "${gitSrc}"
-      
+    }
+
+    stage('Build Maven project') {
       container('maven') {
           sh "mvn -B clean package"
       }
