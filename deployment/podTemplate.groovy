@@ -41,7 +41,7 @@ podTemplate(label: 'docker', namespace: 'default',
     stage( 'Clean Up Existing Deployments' ) {
       container('kubectl') {
         withCredentials([[$class: 'UsernamePasswordMultiBinding', 
-                            credentialsId: 'jenkins-id',
+                            credentialsId: 'icp-id',
                             usernameVariable: 'DOCKER_HUB_USER',
                             passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
             
