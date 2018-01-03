@@ -26,7 +26,7 @@ podTemplate(label: 'docker', namespace: 'default',
           sh "mvn -B clean package"
       }
     }
-    docker.withRegistry("${dockerRegistry}", 'jenkins-id') {
+    docker.withRegistry("${dockerRegistry}", 'icp-id') {
       stage('Build Docker image') {
         container('docker') {
           def props = readProperties  file:'deployment/pipeline.properties'
@@ -52,7 +52,7 @@ podTemplate(label: 'docker', namespace: 'default',
     stage( 'Deploy to Cluster' ) {
       container('kubectl') {
         withCredentials([[$class: 'UsernamePasswordMultiBinding', 
-                            credentialsId: 'jenkins-id',
+                            credentialsId: 'icp-id',
                             usernameVariable: 'DOCKER_HUB_USER',
                             passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
             
