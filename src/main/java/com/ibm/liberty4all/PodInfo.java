@@ -1,4 +1,4 @@
-package com.ibm.liberty4all.health;
+package com.ibm.liberty4all;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,11 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class HealthProbe
- */
-@WebServlet("/health")
-public class HealthProbe extends HttpServlet {
+@WebServlet("/pod")
+public class PodInfo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	public static boolean isOK = true;
@@ -19,35 +16,25 @@ public class HealthProbe extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HealthProbe() {
+    public PodInfo() {
         super();    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if( isOK ) {
+		
+		String pod = System.getenv("HOSTNAME");
+		
+		if( pod != null ) {
 			response.setStatus(200);
 	        response.setContentType("text/plain");
-	        response.getWriter().print("OK");
+	        response.getWriter().print(pod);
 		} else {
-			response.setStatus(500);
+			response.setStatus(400);
 	        response.setContentType("text/plain");
-	        response.getWriter().print("not well");
+	        response.getWriter().print("clueless");
 		}
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		isOK = !isOK;
-		if( isOK ) {
-			System.out.println( "I'm feeling OK." );
-		} else {
-			System.out.println( "I'm not well." );
-		}
-		response.sendRedirect("/");
 	}
 
 }

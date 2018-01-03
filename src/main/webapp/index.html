@@ -18,10 +18,10 @@
 	<div class="jumbotron">
 		<div class="container">
 		  <div class="row">
-		    <div class="col-6">
-	  			<img src="images/liberty-was-202.png"/>
+		    <div class="col-3">
+	  			<img src="images/liberty-was-202.png" style="height:100px;" />
 		    </div>
-		    <div class="col-6">
+		    <div class="col-9">
 	  			<h1 class="display-4">Liberty 4 All</h1>
 		    </div>
 		  </div>
@@ -32,14 +32,15 @@
 	</div>
 		
 	<div>
-		<p>I'm feeling <span id="message"/>.</p>
+		<p>Pod <span id="pod"/>.</p>
 	</div>
 	
 	<div class="input-group mb-3">
-		<form class="form-inline" method="POST" action="health">
-		    <div class="input-group-prepend">
-		      <button id="sick" type="submit" class="btn btn-primary mb-2">Toggle sick state</button>
-		    </div>
+		<form class="form-inline" method="POST" action="logger">
+			<input type="text" class="form-control mb-2 mr-sm-2" name="msg" placeholder="Message for log">
+			    <div class="input-group-prepend">
+			      <button type="submit" class="btn btn-primary mb-2">Log It!</button>
+			    </div>
 		</form>
 	</div>
 

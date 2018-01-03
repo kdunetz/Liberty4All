@@ -2,9 +2,9 @@
 
 // request message on server
 //Calls SimpleServlet to get the "Hello World" message
-xhrGet("health", function(responseText){
+xhrGet("pod", function(responseText){
 	// add to document
-	var mytitle = document.getElementById('message');
+	var mytitle = document.getElementById('pod');
 	mytitle.innerHTML = responseText;
 
 }, function(err){
@@ -31,7 +31,7 @@ function xhrGet(url, callback, errback){
 	xhr.open("GET", url, true);
 	xhr.onreadystatechange = function(){
 		if(xhr.readyState == 4){
-			if(xhr.status == 200 || xhr.status == 500 ){
+			if(xhr.status == 200 ){
 				callback(xhr.responseText);
 			} else {
 				errback('service not available');
