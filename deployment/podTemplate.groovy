@@ -56,7 +56,7 @@ podTemplate(label: 'docker', namespace: 'default',
                             usernameVariable: 'DOCKER_HUB_USER',
                             passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
             
-            sh "kubectl create -n ${namespace} -f ${deployment}"
+            sh "kubectl create -n ${namespace} -f ${deployment} -f ${service}"
         }
       } 
     }
