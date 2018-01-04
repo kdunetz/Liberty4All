@@ -10,6 +10,6 @@
         <tcpOptions soReuseAddr="true"/>
     </httpEndpoint>
 
-    <application name="Liberty4All" context-root="Liberty4All" location="${appLocation}" type="war"/>
+    <application name="Liberty4All" context-root="/" location="${appLocation}" type="war"/>
 
 </server>
