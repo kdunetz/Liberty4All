@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
       - name: liberty4all
-        image: mycluster.icp:8500/demo/liberty4all
+        image: mycluster.icp:8500/demo/liberty4all:latest
         ports:
         - containerPort: 9080
