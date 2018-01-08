@@ -9,11 +9,11 @@ podTemplate(label: 'docker', namespace: 'default',
 
   def gitSrc = 'https://github.com/jconallen/Liberty4All.git'
   def dockerRegistry = 'https://mycluster.icp:8500'
-  def image = 'mycluster.icp:8500/demo/liberty4all'
+  def image = 'mycluster.icp:8500/default/liberty4all'
   def deployment = 'deployment/liberty4all-deploy.yml'
   def service = 'deployment/liberty4all-svc.yml'
   def selector = 'liberty4all'
-  def namespace = 'demo'
+  def namespace = 'default'
   
   node('docker') {
     
