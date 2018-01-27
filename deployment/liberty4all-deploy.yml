@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: liberty4all
 spec:
-  replicas: 2
+  replicas: 3
   template:
     metadata:
       labels:
