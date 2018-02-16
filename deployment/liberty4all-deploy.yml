@@ -1,16 +1,16 @@
 apiVersion: apps/v1beta1 
 kind: Deployment
 metadata:
-  name: liberty4all
+  name: liberty4all-kad
 spec:
   replicas: 3
   template:
     metadata:
       labels:
-        app: liberty4all
+        app: liberty4all-kad
     spec:
       containers:
-      - name: liberty4all
+      - name: liberty4all-kad
         image: mycluster.icp:8500/default/liberty4all:latest
         ports:
         - containerPort: 9080
