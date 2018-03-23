@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
       - name: liberty4all-kad
-        image: mycluster.icp:8500/default/liberty4all:latest
+        image: kdunetz/liberty4all:latest
         ports:
         - containerPort: 9080

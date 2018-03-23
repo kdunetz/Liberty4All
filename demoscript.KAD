@@ -1,0 +1,5 @@
+
+vi src/main/webapp/index.html 
+run ./build_and_deploy.sh
+
+Show the change of your app.  Remember the service port will change..so you need to refresh the ICP console to get the new URL
